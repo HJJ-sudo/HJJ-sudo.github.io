@@ -1,0 +1,369 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  width: 100%;
+  height: 36px;
+  background-color: #333333;
+}
+
+.w {
+  width: 1090px;
+  margin: 0 auto;
+}
+
+.m-top {
+  margin-top: 20px;
+}
+
+.header__top-bar {
+  height: 100%;
+  line-height: 36px;
+  font-size: 12px;
+  /* color: #cccccc;对a的父亲定义颜色无法显示，a自身的样式所用类标签更精准 */
+}
+
+.header__top-bar ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header__top-bar__item {
+  margin: 10px 10px;
+  height: 16px;
+  border-right: 1px solid #ccc;
+}
+
+
+.company-purchase {
+  font-size: 12px;
+  color: #CC9758;
+}
+
+.company-purchase:hover,
+.header__top-bar ul li>a:hover {
+  color: #fff;
+}
+
+.header__top-bar ul li .right {
+  margin-left: 5px;
+  font-size: 15px;
+  color: #cccccc;
+  transition: transform 0.3s ease;
+}
+
+.header__top-bar ul li .icon-shouji {
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+.dropdown-toggle {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: -10px;
+  z-index: 1000;
+  width: 120px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  color: #333333;
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0.3s ease;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 8px 12px;
+  line-height: 36px;
+  font-size: 14px;
+}
+
+.dropdown-toggle:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown-toggle:hover a .right {
+  transform: rotate(90deg) !important;
+}
+
+.dropdown-item:hover {
+  background-color: #f5f5f5;
+  color: #CC9758;
+}
+
+.logo-form {
+  position: relative;
+  display: flex;
+  gap: 66px;
+  align-items: center;
+}
+
+.header__logo {
+  position: relative;
+  width: 310px;
+  height: 100px;
+  overflow: hidden;
+}
+
+.header__logo h1 {
+  position: absolute;
+  top: 25px;
+  text-align: center;
+  transform: translateX(-42%);
+}
+
+.header__logo h1 .logo {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+
+.header__search-form__container {
+  display: flex;
+  position: relative;
+}
+
+
+.icon-sousuo {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-size: 16px;
+}
+
+.header__search-form .header__search-form__input {
+  flex: 1;
+  width: 442px;
+  height: 36px;
+  line-height: 36px;
+  padding-left: 38px;
+  border: 1px solid #CC9756;
+  border-radius: 19px 0 0 19px;
+}
+
+.header__search-form .header__search-form__input::placeholder {
+  color: #cccccc;
+}
+
+.header__search-form .header__search-form__btn {
+  width: 80px;
+  height: 36px;
+  line-height: 36px;
+  color: #fff;
+  background-color: #CC9756;
+  border: 1px solid #CC9756;
+  border-radius: 0 19px 19px 0;
+}
+
+.header__search-form span small a {
+  padding: 0 10px;
+}
+
+.header__search-form span small a:hover {
+  color: #CC9756;
+}
+
+.header__search-form span .header__search-form__small {
+  display: inline-block;
+  border-right: 1px solid #ccc;
+}
+
+.header__cart {
+  position: relative;
+  position: absolute;
+  top: 20%;
+  right: 0;
+  width: 134px;
+  height: 36px;
+  line-height: 36px;
+  color: #CC9756;
+  border: 1px solid #CC9756;
+  border-radius: 19px;
+  padding-left: 30px;
+}
+
+.header__cart .header__cart__text {
+  display: inline-block;
+
+}
+
+.header__cart .icon-gouwuche {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-size: 16px;
+}
+
+.nav__list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__list li {
+  padding-bottom: 7px;
+  border-bottom: 2px solid transparent;
+}
+
+.nav__list li:hover {
+  border-bottom: 2px solid #CC9758;
+}
+
+.nav__list li a {
+  color: #000;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.nav__list li:hover a {
+  color: #CC9758;
+}
+
+
+
+/* 导航栏基础样式 */
+
+/* 导航项样式 */
+.nav-item {
+  position: relative;
+  /* 关键：作为下拉菜单的定位容器 */
+  cursor: pointer;
+  color: #333;
+}
+
+
+/* 下拉菜单：默认隐藏 */
+.nav-item .dropdown-menu2 {
+  display: none;
+  position: absolute;
+  /* 脱离文档流，悬浮显示 */
+  top: 110%;
+  /* 位于导航项正下方 */
+  left: 0;
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  width: 400px;
+  /* 下拉菜单宽度，贴合右图 */
+  padding: 15px;
+  z-index: 999;
+  /* 确保在页面内容上方 */
+}
+
+/* hover导航项时，显示下拉菜单 */
+.nav-item:hover .dropdown-menu2 {
+  display: grid;
+}
+
+/* 下拉菜单分栏布局（对应右图的3列） */
+.dropdown-menu2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* 3列等宽 */
+  gap: 10px;
+}
+
+.dropdown-column h4 {
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.column-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.column-list li {
+  font-size: 13px;
+  color: #666;
+  padding: 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.column-list li .icon {
+  width: 16px;
+  height: 16px;
+  /* 这里可替换为对应图标（如四件套的图标），示例用背景色占位 */
+  background: #f0f0f0;
+  border-radius: 2px;
+}
+
+
+footer {
+  width: 100%;
+  height: 330px;
+  background-color: #414141;
+}
+
+.footer__top ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+}
+
+.footer__container,
+.footer__top ul li a,
+.footer__bottom p a {
+  font-size: 12px;
+  color: #999;
+}
+
+.footer__bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer__bottom p a {
+  padding: 0 10px;
+}
+
+.footer__bottom p a:hover {
+  color: #fff;
+}
+
+.footer__top ul li a {
+  position: relative;
+  color: #fff;
+  font-size: 18px;
+  line-height: 51px;
+  padding-left: 70px;
+}
+
+.footer__top ul li a .iconfont {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 58px;
+  margin-right: 10px;
+}
+
+.footer__container hr {
+  width: 1090px;
+  height: 0px;
+  /* 关键 */
+  border: none;
+  border-top: 1px solid #999;
+  margin: 30px auto;
+}
